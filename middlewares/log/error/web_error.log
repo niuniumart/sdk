@@ -1,0 +1,175 @@
+2025-05-03 20:10:19.279::::::ERROR:::<nil>:::middleware.go.144 ngin.CreateGin.PanicRecover.func1.1:::In PanicRecover,Error:panic called with nil argument
+
+2025-05-03 20:10:19.28::::::ERROR:::<nil>:::middleware.go.157 ngin.CreateGin.PanicRecover.func1.1:::panic stack info goroutine 44 [running]:
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.PanicRecover.func1.1()
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:155 +0x240
+panic({0x0?, 0x0?})
+	/opt/homebrew/Cellar/go@1.21/1.21.13_1/libexec/src/runtime/panic.go:914 +0x218
+github.com/niuniumart/sdk/middlewares/ngin.MustPanic(0x140000905a0?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/gin_test.go:59 +0x24
+github.com/gin-gonic/gin.(*Context).Next(0x140002c0100)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.Cors.func3(0x140000905a0?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:26 +0x70
+github.com/gin-gonic/gin.(*Context).Next(0x140002c0100)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.InfoLog.func2(0x140002c0100)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:93 +0x30c
+github.com/gin-gonic/gin.(*Context).Next(0x140002c0100)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.PanicRecover.func1(0x14000379798?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:164 +0x48
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0x140002c0100)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x80
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0x140002c0100)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xb0
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0x140005829c0, 0x140002c0100)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gi
+
+
+2025-05-03 20:17:36.449::::::ERROR:::<nil>:::middleware.go.150 ngin.CreateGin.PanicRecover.func1.1:::In PanicRecover,Error:panic called with nil argument
+
+2025-05-03 20:17:36.45::::::ERROR:::<nil>:::middleware.go.163 ngin.CreateGin.PanicRecover.func1.1:::panic stack info goroutine 53 [running]:
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.PanicRecover.func1.1()
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:161 +0x240
+panic({0x0?, 0x0?})
+	/opt/homebrew/Cellar/go@1.21/1.21.13_1/libexec/src/runtime/panic.go:914 +0x218
+github.com/niuniumart/sdk/middlewares/ngin.MustPanic(0x14000014528?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/gin_test.go:61 +0x24
+github.com/gin-gonic/gin.(*Context).Next(0x1400001c500)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.Cors.func3(0x14000014528?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:27 +0x70
+github.com/gin-gonic/gin.(*Context).Next(0x1400001c500)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.InfoLog.func2(0x1400001c500)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:99 +0x384
+github.com/gin-gonic/gin.(*Context).Next(0x1400001c500)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.PanicRecover.func1(0x14000615798?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:170 +0x48
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0x1400001c500)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x80
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0x1400001c500)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xb0
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0x14000418680, 0x1400001c500)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gi
+
+
+2025-05-03 20:20:38.465::::::ERROR:::<nil>:::middleware.go.152 ngin.CreateGin.PanicRecover.func1.1:::In PanicRecover,Error:panic called with nil argument
+
+2025-05-03 20:20:38.465::::::ERROR:::<nil>:::middleware.go.165 ngin.CreateGin.PanicRecover.func1.1:::panic stack info goroutine 38 [running]:
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.PanicRecover.func1.1()
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:163 +0x240
+panic({0x0?, 0x0?})
+	/opt/homebrew/Cellar/go@1.21/1.21.13_1/libexec/src/runtime/panic.go:914 +0x218
+github.com/niuniumart/sdk/middlewares/ngin.MustPanic(0x140006b8ee8?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/gin_test.go:61 +0x24
+github.com/gin-gonic/gin.(*Context).Next(0x140004d2100)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.Cors.func3(0x140006b8ee8?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:27 +0x70
+github.com/gin-gonic/gin.(*Context).Next(0x140004d2100)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.InfoLog.func2(0x140004d2100)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:101 +0x3c8
+github.com/gin-gonic/gin.(*Context).Next(0x140004d2100)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.PanicRecover.func1(0x14000597798?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:172 +0x48
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0x140004d2100)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x80
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0x140004d2100)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xb0
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0x14000502ea0, 0x140004d2100)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/g
+
+
+2025-05-03 20:22:26.443::::::ERROR:::<nil>:::middleware.go.152 ngin.CreateGin.PanicRecover.func1.1:::In PanicRecover,Error:panic called with nil argument
+
+2025-05-03 20:22:26.443::::::ERROR:::<nil>:::middleware.go.165 ngin.CreateGin.PanicRecover.func1.1:::panic stack info goroutine 39 [running]:
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.PanicRecover.func1.1()
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:163 +0x240
+panic({0x0?, 0x0?})
+	/opt/homebrew/Cellar/go@1.21/1.21.13_1/libexec/src/runtime/panic.go:914 +0x218
+github.com/niuniumart/sdk/middlewares/ngin.MustPanic(0x140000da468?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/gin_test.go:62 +0x24
+github.com/gin-gonic/gin.(*Context).Next(0x1400055e500)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.Cors.func3(0x140000da468?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:27 +0x70
+github.com/gin-gonic/gin.(*Context).Next(0x1400055e500)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.InfoLog.func2(0x1400055e500)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:101 +0x3c8
+github.com/gin-gonic/gin.(*Context).Next(0x1400055e500)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.PanicRecover.func1(0x140001bd798?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:172 +0x48
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0x1400055e500)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x80
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0x1400055e500)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xb0
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0x140005829c0, 0x1400055e500)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/g
+
+
+2025-05-03 20:27:26.665::::::ERROR:::<nil>:::middleware.go.149 ngin.CreateGin.PanicRecover.func1.1:::In PanicRecover,Error:panic called with nil argument
+
+2025-05-03 20:27:26.665::::::ERROR:::<nil>:::middleware.go.162 ngin.CreateGin.PanicRecover.func1.1:::panic stack info goroutine 54 [running]:
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.PanicRecover.func1.1()
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:160 +0x240
+panic({0x0?, 0x0?})
+	/opt/homebrew/Cellar/go@1.21/1.21.13_1/libexec/src/runtime/panic.go:914 +0x218
+github.com/niuniumart/sdk/middlewares/ngin.MustPanic(0x14000092270?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/gin_test.go:62 +0x24
+github.com/gin-gonic/gin.(*Context).Next(0x14000134300)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.Cors.func3(0x14000092270?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:28 +0x70
+github.com/gin-gonic/gin.(*Context).Next(0x14000134300)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.InfoLog.func2(0x14000134300)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:98 +0x3c8
+github.com/gin-gonic/gin.(*Context).Next(0x14000134300)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.PanicRecover.func1(0x14000129798?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:169 +0x48
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0x14000134300)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x80
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0x14000134300)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xb0
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0x140000b29c0, 0x14000134300)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gi
+
+
