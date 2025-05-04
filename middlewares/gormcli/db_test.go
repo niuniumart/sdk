@@ -2,10 +2,11 @@ package gormcli
 
 import (
 	"context"
-	"github.com/niuniumart/sdk/constant"
-	"github.com/niuniumart/sdk/middlewares/log"
 	"testing"
 	"time"
+
+	"github.com/niuniumart/sdk/middlewares/log"
+	"github.com/niuniumart/sdk/middlewares/nlog"
 )
 
 type UrlMap struct {
@@ -49,7 +50,7 @@ func TestDB(t *testing.T) {
 		LongUrl:  "hts://wwfdsfom",
 		ShortUrl: "123ba",
 	}
-	err := db.WithContext(context.WithValue(context.Background(), constant.TraceID, "sdk success")).Create(urlMap).Error
+	err := db.WithContext(context.WithValue(context.Background(), nlog.TraceID, "sdk success")).Create(urlMap).Error
 	if err != nil {
 		t.Error(err)
 	}
@@ -94,14 +95,14 @@ func TestRwDB(t *testing.T) {
 		LongUrl:  "hts://wwfdsfom",
 		ShortUrl: "123ba",
 	}
-	err = db.WithContext(context.WithValue(context.Background(), constant.TraceID, "sdk success")).Create(urlMap).Error
+	err = db.WithContext(context.WithValue(context.Background(), nlog.TraceID, "sdk success")).Create(urlMap).Error
 	if err != nil {
 		t.Error(err)
 	}
 
 	// 查询
 	var urlMap2 UrlMap
-	err = db.WithContext(context.WithValue(context.Background(), constant.TraceID, "sdk success")).Where("short_url = ?", "123ba").First(&urlMap2).Error
+	err = db.WithContext(context.WithValue(context.Background(), nlog.TraceID, "sdk success")).Where("short_url = ?", "123ba").First(&urlMap2).Error
 	if err != nil {
 		t.Error(err)
 	}
