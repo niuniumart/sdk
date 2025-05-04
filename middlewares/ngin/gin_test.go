@@ -8,7 +8,6 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/niuniumart/sdk/constant"
 	"github.com/niuniumart/sdk/middlewares/nlog"
 	"github.com/smartystreets/goconvey/convey"
 )
@@ -63,9 +62,9 @@ func MustPanic(c *gin.Context) {
 }
 
 func LogicError(c *gin.Context) {
-	traceID := c.Request.Header.Get(constant.TraceID)
+	traceID := c.Request.Header.Get(nlog.TraceID)
 	ctx := context.Background()
-	ctx = context.WithValue(ctx, constant.TraceID, traceID)
+	ctx = context.WithValue(ctx, nlog.TraceID, traceID)
 	nlog.Infof(ctx, "LogicError !!!!!")
 	var resp Resp
 	resp.RetCode = 10005

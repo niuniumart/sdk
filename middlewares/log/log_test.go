@@ -3,9 +3,10 @@ package log
 import (
 	"context"
 	"fmt"
-	"github.com/niuniumart/sdk/constant"
-	"github.com/smartystreets/goconvey/convey"
 	"testing"
+
+	"github.com/niuniumart/sdk/middlewares/nlog"
+	"github.com/smartystreets/goconvey/convey"
 )
 
 func TestLog(t *testing.T) {
@@ -30,10 +31,10 @@ func TestLog(t *testing.T) {
 		Warn("sdk test")
 
 		ctx := context.Background()
-		InfoContextf(context.WithValue(ctx, constant.TraceID, "123132321"), "a is %d", 1)
-		ErrorContextf(context.WithValue(ctx, constant.TraceID, "123132321"), "a is %d", 1)
-		WarnContextf(context.WithValue(ctx, constant.TraceID, "123132321"), "a is %d", 1)
-		DebugContextf(context.WithValue(ctx, constant.TraceID, "123132321"), "a is %d", 1)
+		InfoContextf(context.WithValue(ctx, nlog.TraceID, "123132321"), "a is %d", 1)
+		ErrorContextf(context.WithValue(ctx, nlog.TraceID, "123132321"), "a is %d", 1)
+		WarnContextf(context.WithValue(ctx, nlog.TraceID, "123132321"), "a is %d", 1)
+		DebugContextf(context.WithValue(ctx, nlog.TraceID, "123132321"), "a is %d", 1)
 
 		//  Fatalf("sdk test")
 

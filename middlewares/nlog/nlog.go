@@ -3,6 +3,7 @@ package nlog
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -10,7 +11,6 @@ import (
 	"runtime"
 
 	"github.com/cihub/seelog"
-	"github.com/niuniumart/sdk/constant"
 )
 
 // init data
@@ -118,7 +118,7 @@ func Flush() {
 // implement get prefix
 func getPrefix(ctx context.Context, level string) string {
 	callerInfo := getCallerName()
-	traceID := ctx.Value(constant.TraceID)
+	traceID := ctx.Value(TraceID)
 	prefix := fmt.Sprintf(":::%s:::%v:::%s:::", level, traceID, callerInfo)
 	return prefix
 }
@@ -146,3 +146,42 @@ var seelogConfig string = `
 		<format id="fmt_err" format="%Date(2006-01-02 15:04:05.999):::%Msg%n" />
 	</formats>
 </seelog>`
+
+const (
+	TraceID = "Trace-ID"
+	UserID  = "User-ID"
+)
+
+// 时间标准化
+const (
+	SysTimeFormat      = "2006-01-02 15:04:05"
+	SysTimeFormatShort = "2006-01-02"
+)
+
+var (
+	ERR_HANDLE_INPUT = errors.New("handle input error")
+)
+
+type ErrCode int // 错误码
+
+var (
+	Success          ErrCode = 0
+	ErrInputInvalid  ErrCode = 8020
+	ErrShouldBind    ErrCode = 8021
+	ERR_JSON_MARSHAL ErrCode = 8022
+)
+
+var errMsgDic = map[ErrCode]string{
+	Success:          "ok",
+	ErrInputInvalid:  "input invalid",
+	ErrShouldBind:    "should bind failed",
+	ERR_JSON_MARSHAL: "json marshal failed",
+}
+
+// GetErrMsg 获取错误描述
+func GetErrMsg(code ErrCode) string {
+	if msg, ok := errMsgDic[code]; ok {
+		return msg
+	}
+	return fmt.Sprintf("unknown error code %d", code)
+}

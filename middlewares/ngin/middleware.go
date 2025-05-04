@@ -14,7 +14,6 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
-	"github.com/niuniumart/sdk/constant"
 	"github.com/niuniumart/sdk/middlewares/nlog"
 )
 
@@ -80,13 +79,13 @@ func InfoLog() gin.HandlerFunc {
 		c.Request.Body.Close() //  must close
 		c.Request.Body = ioutil.NopCloser(bytes.NewBuffer(body))
 		// ***** 2. set requestID for goroutine ctx ****** //
-		requestID := c.Request.Header.Get(constant.TraceID)
+		requestID := c.Request.Header.Get(nlog.TraceID)
 		if requestID == "" {
 			requestID = "empty" + uuid.New().String()
 		}
 		ctx := context.Background()
-		ctx = context.WithValue(ctx, constant.TraceID, requestID)
-		c.Request.Header.Set(constant.TraceID, requestID)
+		ctx = context.WithValue(ctx, nlog.TraceID, requestID)
+		c.Request.Header.Set(nlog.TraceID, requestID)
 		if _, ok := ignoreReqLogUrlDic[c.Request.URL.Path]; !ok {
 			nlog.Infof(ctx, "Req Url: %s %+v,[Body]:%s; [Header]:%s", c.Request.Method, c.Request.URL,
 				string(body), GetFmtStr(c.Request.Header))

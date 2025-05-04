@@ -173,3 +173,38 @@ github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0x140000b29c0, 0x1400013430
 	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gi
 
 
+2025-05-04 09:47:59.85::::::ERROR:::<nil>:::middleware.go.148 ngin.CreateGin.PanicRecover.func1.1:::In PanicRecover,Error:panic called with nil argument
+
+2025-05-04 09:47:59.85::::::ERROR:::<nil>:::middleware.go.161 ngin.CreateGin.PanicRecover.func1.1:::panic stack info goroutine 43 [running]:
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.PanicRecover.func1.1()
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:159 +0x240
+panic({0x0?, 0x0?})
+	/opt/homebrew/Cellar/go@1.21/1.21.13_1/libexec/src/runtime/panic.go:914 +0x218
+github.com/niuniumart/sdk/middlewares/ngin.MustPanic(0x1400009a2d0?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/gin_test.go:61 +0x24
+github.com/gin-gonic/gin.(*Context).Next(0x140000b0300)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.Cors.func3(0x1400009a2d0?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:27 +0x70
+github.com/gin-gonic/gin.(*Context).Next(0x140000b0300)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.InfoLog.func2(0x140000b0300)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:97 +0x3c8
+github.com/gin-gonic/gin.(*Context).Next(0x140000b0300)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x3c
+github.com/niuniumart/sdk/middlewares/ngin.CreateGin.PanicRecover.func1(0x140000a5798?)
+	/Users/niuge/code/aiteam/sdk/middlewares/ngin/middleware.go:168 +0x48
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0x140000b0300)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x80
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0x140000b0300)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xb0
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0x14000603040, 0x140000b0300)
+	/Users/niuge/go/pkg/mod/github.com/gin-gonic/gi
+
+

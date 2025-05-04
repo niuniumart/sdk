@@ -2,13 +2,14 @@ package log
 
 import (
 	"context"
-	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
-	"github.com/niuniumart/sdk/constant"
-	"go.uber.org/zap"
-	"go.uber.org/zap/zapcore"
 	"os"
 	"path/filepath"
 	"runtime"
+
+	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
+	"github.com/niuniumart/sdk/middlewares/nlog"
+	"go.uber.org/zap"
+	"go.uber.org/zap/zapcore"
 )
 
 var (
@@ -209,16 +210,16 @@ func Fatalf(format string, v ...interface{}) {
 
 func DebugContextf(ctx context.Context, format string, v ...interface{}) {
 	traceID := ""
-	if traceValue := ctx.Value(constant.TraceID); traceValue != nil {
+	if traceValue := ctx.Value(nlog.TraceID); traceValue != nil {
 		traceID = traceValue.(string)
 	}
 	v = append([]interface{}{traceID}, v...)
-	GetDefaultLogger().Debugf(constant.TraceID+":%s, "+format, v...)
+	GetDefaultLogger().Debugf(nlog.TraceID+":%s, "+format, v...)
 
 }
 func ErrorContextf(ctx context.Context, format string, v ...interface{}) {
 	traceID := ""
-	if traceValue := ctx.Value(constant.TraceID); traceValue != nil {
+	if traceValue := ctx.Value(nlog.TraceID); traceValue != nil {
 		traceID = traceValue.(string)
 	}
 	v = append([]interface{}{traceID}, v...)
@@ -233,19 +234,19 @@ func ErrorContextf(ctx context.Context, format string, v ...interface{}) {
 		callerFile = filepath.Base(file)
 		GetDefaultLogger().Infof("caller is %v:%v", callerFile, line)
 	}
-	GetDefaultLogger().Errorf(constant.TraceID+":%s, "+format, v...)
+	GetDefaultLogger().Errorf(nlog.TraceID+":%s, "+format, v...)
 }
 func WarnContextf(ctx context.Context, format string, v ...interface{}) {
 	traceID := ""
-	if traceValue := ctx.Value(constant.TraceID); traceValue != nil {
+	if traceValue := ctx.Value(nlog.TraceID); traceValue != nil {
 		traceID = traceValue.(string)
 	}
 	v = append([]interface{}{traceID}, v...)
-	GetDefaultLogger().Warnf(constant.TraceID+":%s, "+format, v...)
+	GetDefaultLogger().Warnf(nlog.TraceID+":%s, "+format, v...)
 }
 func InfoContextf(ctx context.Context, format string, v ...interface{}) {
 	traceID := ""
-	if traceValue := ctx.Value(constant.TraceID); traceValue != nil {
+	if traceValue := ctx.Value(nlog.TraceID); traceValue != nil {
 		traceID = traceValue.(string)
 	}
 	v = append([]interface{}{traceID}, v...)
@@ -262,5 +263,5 @@ func InfoContextf(ctx context.Context, format string, v ...interface{}) {
 		GetDefaultLogger().Infof("caller is %v:%v", callerFile, line)
 	}
 
-	GetDefaultLogger().Infof(constant.TraceID+":%s, "+format, v...)
+	GetDefaultLogger().Infof(nlog.TraceID+":%s, "+format, v...)
 }
