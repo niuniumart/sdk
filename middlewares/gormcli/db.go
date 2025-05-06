@@ -3,12 +3,13 @@ package gormcli
 import (
 	"context"
 	"fmt"
-	"github.com/niuniumart/sdk/middlewares/log"
+	"reflect"
+	"time"
+
+	"github.com/niuniumart/sdk/middlewares/nlog"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
-	"reflect"
-	"time"
 )
 
 type ctxTransactionKey struct {
@@ -107,7 +108,7 @@ func newDB(options Options) {
 	connArgs := fmt.Sprintf(dsn, options.user,
 		options.password, options.addr, options.dataBase)
 	if options.slowThresholdMillisecond != 0 {
-		gormLogger := log.NewGormLogger(options.slowThresholdMillisecond)
+		gormLogger := nlog.NewGormLogger(options.slowThresholdMillisecond)
 		db, err = gorm.Open(mysql.Open(connArgs), &gorm.Config{
 			Logger: gormLogger,
 		})
@@ -142,7 +143,7 @@ func Close() {
 	if db != nil {
 		sqlDB, err := db.DB()
 		if err != nil {
-			log.Errorf("close gormcli err:%v", err)
+			nlog.Errorf(context.Background(), "close gormcli err:%v", err)
 		}
 		sqlDB.Close()
 	}
@@ -163,7 +164,7 @@ func GetDBFromCtx(ctx context.Context) *gorm.DB {
 	if iface != nil {
 		tx, ok := iface.(*gorm.DB)
 		if !ok {
-			log.ErrorContextf(ctx, "unexpect context value type: %s", reflect.TypeOf(tx))
+			nlog.Errorf(ctx, "unexpect context value type: %s", reflect.TypeOf(tx))
 			return nil
 		}
 
