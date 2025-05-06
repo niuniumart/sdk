@@ -2,27 +2,28 @@ package gormcli
 
 import (
 	"fmt"
-	"github.com/niuniumart/sdk/middlewares/log"
+	"time"
+
+	"github.com/niuniumart/sdk/middlewares/nlog"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/plugin/dbresolver"
-	"time"
 )
 
 // 读写分离配置
 type RwOptions struct {
-	masterAddr     string          // 主库地址，格式是 IP:PORT
-	masterUser     string          // 主库用户名
-	masterPassword string          // 主库密码
-	masterDataBase string          // 主库db名
-	slaveAddr      []string        // 从库地址，格式是 IP:PORT
-	slaveUser      []string        // 从库用户名(顺序和地址一致)
-	slavePassword  []string        // 从库密码(顺序和地址一致)
-	slaveDataBase  []string        // 从库db名(顺序和地址一致)
-	rwMaxIdleConn  int             // 最大空闲连接数
-	rwMaxOpenConn  int             // 最大打开的连接数
-	rwMaxIdleTime  int64           // 连接最大空闲时间
-	rwLogger       *log.GormLogger // 日志输出
+	masterAddr     string           // 主库地址，格式是 IP:PORT
+	masterUser     string           // 主库用户名
+	masterPassword string           // 主库密码
+	masterDataBase string           // 主库db名
+	slaveAddr      []string         // 从库地址，格式是 IP:PORT
+	slaveUser      []string         // 从库用户名(顺序和地址一致)
+	slavePassword  []string         // 从库密码(顺序和地址一致)
+	slaveDataBase  []string         // 从库db名(顺序和地址一致)
+	rwMaxIdleConn  int              // 最大空闲连接数
+	rwMaxOpenConn  int              // 最大打开的连接数
+	rwMaxIdleTime  int64            // 连接最大空闲时间
+	rwLogger       *nlog.GormLogger // 日志输出
 }
 
 type RwOption func(*RwOptions)
@@ -94,7 +95,7 @@ func WithRwMaxIdleTime(maxIdleTime int64) RwOption {
 	}
 }
 
-func WithRwLogger(logger *log.GormLogger) RwOption {
+func WithRwLogger(logger *nlog.GormLogger) RwOption {
 	return func(o *RwOptions) {
 		o.rwLogger = logger
 	}

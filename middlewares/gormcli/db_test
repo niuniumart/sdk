@@ -22,7 +22,7 @@ func (UrlMap) TableName() string {
 
 func TestDB(t *testing.T) {
 	// 初始化日志
-	log.Init(log.WithLogLevel("debug"),
+	nlog.Init(log.WithLogLevel("debug"),
 		log.WithFileName("sdk.log"),
 		log.WithMaxSize(100),
 		log.WithMaxBackups(3),
@@ -83,7 +83,7 @@ func TestRwDB(t *testing.T) {
 		// 100s
 		WithRwMaxIdleTime(100),
 		// 带上日志
-		WithRwLogger(log.NewGormLogger(10)),
+		WithRwLogger(nlog.NewGormLogger(10)),
 	)
 
 	var err error
