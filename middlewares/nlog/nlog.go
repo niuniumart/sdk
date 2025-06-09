@@ -134,7 +134,7 @@ var seelogConfig string = `
 <seelog minlevel="trace">
 	<outputs formatid="fmt_info">
          <filter levels="trace,debug,info,warn,error,critical">
-			 <rollingfile formatid="fmt_info" type="size" filename="../log/web.log"  maxsize="104857600" maxrolls="10"/>
+			 <rollingfile type="date" filename="../log/web.log" datepattern="2006-01-02" maxrolls="60" /> 
          </filter>
          <filter levels="error,critical">
 			 <rollingfile formatid="fmt_err" type="size" filename="../log/error/web_error.log"  ` +
